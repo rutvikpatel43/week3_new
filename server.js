@@ -1,9 +1,11 @@
 /// <reference path ="_reference.ts" />
 var express = require('express');
+var path = require('path');
 var app = express();
 var port = process.env.port || 3000;
 app.get('/', function (req, res, next) {
-    res.send('Hello Express');
+    //res.send('Hello Express');
+    res.sendFile(path.join(__dirname, "Public", "index.html"));
 });
 app.get('/info', function (req, res) {
     res.send('your Custom info page');
